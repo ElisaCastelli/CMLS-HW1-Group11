@@ -1,3 +1,3 @@
-# CMLS-HW1-Group11
-Homework 1 CMLS - Assignment 4 
+# CMLS - HW 1 - CLASSIFICATION OF URBAN SOUNDS
+
 
