@@ -51,13 +51,16 @@
 	
 	In this way we have built a feature vector of 82 coefficient to capture different qualities about the audio over time, without exceeding in expensive computation.
 	
-	As suggested by the author of the dataset, we have perform the 10-fold cross validation to do the training, test steps and the classification. Only at the end we have taken the ten different results and we have made an average on them.
-	
-	
+	As suggested by the author of the dataset, we performed the 10-fold cross validation to do the training, test steps and the classification. Only at the end we have taken the ten different results and we have made an average on them.
 	
 	\section{Classification}
-	
-	\section{Conclusions}
+	Once the desired features were computed, we could proceed with the classification. We decided to use SVM (Support Vector Machine) as model for the classifier and RBF (radial basis function) as kernel function.
+
+As for the training and testing steps, we proceeded as follows. At each iteration of the cross-validation algorihm we initialized a new model, then trained it on supervised data from 9 of the 10 predefined folds and finally tested it by predicting the labels of the samples contained in the remaining fold. The results of each prediction were stored for the evaluation part while the model was discarded.
+
+The actual implementation of the SVM classifier is the one provided by the sklearn library. According to its documentation, this classifier is able to perform multiclass labeling using a one-vs-one scheme. This means that for every sample in the test set there is a set of multiple classifiers, one for each pair of possible classes which the sample can belong to. At the end of the prediction, the sample is assigned to the class that has received the most votes.
+
+	\section{Results}
 	
 	\begin{thebibliography}{99}
 		
