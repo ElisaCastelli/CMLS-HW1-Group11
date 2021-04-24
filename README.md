@@ -10,7 +10,7 @@ We evaluated the audios using these features:
 - Chroma features mean and standard deviation
 - Spectral contrast mean and standard deviation
 
-As suggested by the author of the dataset, we performed the 10-fold cross validation to do training and test steps.
+As suggested by the author of the dataset, we performed the 10-fold cross validation to do training, test and classification steps.
 Regardings the classification we decided to use SVM (Support Vector Machine) as model for the classifier and RBF (radial basis function) as kernel function.
 
 ## Dataset
