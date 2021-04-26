@@ -14,7 +14,7 @@ As suggested by the author of the dataset, we performed the 10-fold cross valida
 Regarding the classification, we decided to use SVM (Support Vector Machine) as model for the classifier and RBF (radial basis function) as kernel function.
 
 ## Dataset
-[UrbanSound8k](https://www.kaggle.com/chrisfilo/urbansound8k)
+[UrbanSound8k] (https://www.kaggle.com/chrisfilo/urbansound8k)
 
 ## Group components:
 •	Giovanni Zanocco
