@@ -2,8 +2,11 @@
 \usepackage{tabularx} 
 \usepackage{amsmath} 
 \usepackage{graphicx} 
+\usepackage{caption}
+\captionsetup[figure]{font=footnotesize}
 \usepackage[margin=1.1in,letterpaper]{geometry}
 \usepackage{cite} 
+\usepackage{textcomp}
 \usepackage[final]{hyperref} 
 \hypersetup{
 	colorlinks=true,      
@@ -20,7 +23,7 @@
 	
 	\title{CMLS Homework 1 - Audio Event Classification}
 	\author{E. Castelli, E. Intagliata, A. Rizzitiello, G. Zanocco}
-	\date{\today}
+	\date{April 2021}
 	\maketitle
 	
 	\section{GitHub Repository}
@@ -61,6 +64,27 @@ As for the training and testing steps, we proceeded as follows. At each iteratio
 The actual implementation of the SVM classifier is the one provided by the sklearn library. According to its documentation, this classifier is able to perform multiclass labeling using a one-vs-one scheme. This means that for every sample in the test set there is a set of multiple classifiers, one for each pair of possible classes which the sample can belong to. At the end of the prediction, the sample is assigned to the class that has received the most votes.
 
 	\section{Results}
+	In order to evaluate the performances of the algorithm, we evaluated the classification accuracy and the confusion matrix. 
+Dealing with a multiclass classification problem, we used the \textit{sklearn} function \texttt{accuracy\_score} to compute the accuracy at each iteration. It returns the fraction of correctly classified samples:
+
+\begin{equation}
+[0.630, 0.646, 0.6086486486486486, 0.606, 0.703, 0.579, 0.663, 0.700, 0.680, 0.708]
+\end{equation}
+	
+	 This gives us an average accuracy of about \textbf{ 65.2 \% } which is slightly below the results obtained in \cite{sal14}.
+	
+	The confusion matrix in \ref{fig:cm} is obtained by summing the confusion matrices obtained at each iteration.
+	
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{cm.png}
+  \caption{Confusion Matrix}
+  \label{fig:cm}
+\end{figure}
+	
+We can see the performance between classes is in line with \cite{sal14}, too.
+In particular both classifier, even relating on a different feature space, confuse pairs of classeswith similar timbres. FOr example: air conditioners and idling engines, jackhammers and drills, children and street music.
+	
 	
 	\begin{thebibliography}{99}
 		
